@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no">
 <meta name="theme-color" content="#6f5cf0">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -10,7 +10,7 @@
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icon.svg">
 <link rel="apple-touch-icon" href="icon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400..700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400..800&display=swap" rel="stylesheet">
 <title>Rozciąganie</title>
 <style>
 :root{--bg:#fff1f6;--bg2:#efe9ff;--card:#fff;--tx:#4a3550;--mut:#9a859f;--ac:#ff7eb6;--ac2:#b79bff;--onac:#fff;--sw:#ff9f6b;--bd:#f6dbe8;--sh:0 6px 18px #ff7eb622;color-scheme:light dark}
@@ -98,18 +98,44 @@ h1{font-size:30px;font-weight:800;letter-spacing:-.03em}
 .ctl button{display:grid;place-items:center}.ib.tx{width:auto;padding:0 12px;font-size:13px;font-weight:700}
 .cal-h{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}.cal-h h2{text-transform:capitalize}.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center}.cal .h{font-size:12px;color:var(--mut);font-weight:700}.cal i{font-style:normal;aspect-ratio:1;display:grid;place-items:center;border-radius:50%;font-size:13px;font-weight:700;color:var(--mut)}.cal .on{background:var(--ac);color:var(--onac)}.cal .miss{background:var(--bg)}.cal .fu{opacity:.35}.cal .td{outline:2px solid var(--ac);outline-offset:1px}.cs{color:var(--mut);text-align:center;margin:12px 0 0;font-size:14px}.bg span{font-size:20px}
 .cf{font-size:0;width:8px;height:14px;border-radius:2px}
-html,body,button,input,select{font-family:'Comfortaa',ui-rounded,'SF Pro Rounded',system-ui,sans-serif}
+html,body,button,input,select{font-family:'Manrope',ui-rounded,'SF Pro Rounded',system-ui,sans-serif}
 body{font-weight:500}h1{font-size:28px}
 .btn{border-radius:18px}.chip{border-radius:14px}.seg{border-radius:18px}.seg button{border-radius:14px}
 .ib{border-radius:12px}.ctl button{border-radius:22px}.ctl #pp{border-radius:28px}
 .week b{border-radius:11px}.em{border-radius:16px}.mas{border-radius:26px}.pills span{border-radius:10px}
 .bg span{border-radius:12px}#pe svg{border-radius:36px}.cal i{border-radius:11px}dialog{border-radius:24px}
+html{touch-action:manipulation;-webkit-text-size-adjust:100%}
+body{background:var(--bg);font-weight:500;letter-spacing:-.005em}
+h1{font-weight:800;letter-spacing:-.035em}
+.em,#pe svg{border-radius:50%}.em{box-shadow:inset 0 0 0 1px #2a25400d}
+#pe svg{width:210px;height:210px;box-shadow:var(--sh)}
+.hero{border:0}.card{box-shadow:0 1px 2px #2a25400a}
+.bg span{font-size:20px}.pills span{font-weight:700}
+.cal i{cursor:pointer}.cal .fu{cursor:default}.cal i:active{transform:scale(.92)}
+[hidden]{display:none!important}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cpath d='M30 40l3 7 7 3-7 3-3 7-3-7-7-3 7-3z' fill='%23ff9bbb'/%3E%3Cpath d='M150 90l2 5 5 2-5 2-2 5-2-5-5-2 5-2z' fill='%239a8bff'/%3E%3Cpath d='M90 190l3 7 7 3-7 3-3 7-3-7-7-3 7-3z' fill='%23ffd27a'/%3E%3Cpath d='M205 205l2 4 4 2-4 2-2 4-2-4-4-2 4-2z' fill='%23ff9bbb'/%3E%3Ccircle cx='200' cy='30' r='2' fill='%239a8bff'/%3E%3Ccircle cx='60' cy='130' r='1.8' fill='%23ff9bbb'/%3E%3Ccircle cx='210' cy='140' r='2' fill='%23ffd27a'/%3E%3Ccircle cx='20' cy='210' r='1.6' fill='%239a8bff'/%3E%3C/svg%3E") 0 0/240px 240px;animation:tw 7s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.3}50%{opacity:.75}}
+@media(prefers-reduced-motion:reduce){body::before{animation:none;opacity:.5}}
+main{padding-bottom:calc(160px + env(safe-area-inset-bottom))}
+.fix{bottom:calc(64px + env(safe-area-inset-bottom));padding:18px 16px 8px;z-index:3;background:linear-gradient(transparent,var(--bg) 55%)}
+#nav{position:fixed;left:0;right:0;bottom:0;z-index:4;display:flex;padding:6px 8px calc(6px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--card) 90%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-top:1px solid var(--bd)}
+#nav button{flex:1;border:0;background:none;display:grid;justify-items:center;gap:1px;padding:5px 4px;border-radius:14px;font-size:11px;font-weight:700;color:var(--mut)}
+#nav button span{font-size:21px;line-height:1.15;filter:grayscale(1);opacity:.6}
+#nav button.on{color:var(--ac)}#nav button.on span{filter:none;opacity:1}
+#home{max-width:360px}
 </style>
 
 </head>
 <body>
 <main>
   <h1>Rozciąganie</h1>
+  <div class="pg" id="pg-t">
+  <div class="seg"><button data-t="all">Wszystkie zestawy</button><button data-t="fav">Ulubione</button></div><div class="chips" id="chips"></div>
+  <div id="setbox"><div class="sh"><div class="t"><h2 id="sn"></h2><small id="tot"></small></div><button class="ib" id="sFav" aria-label="Ulubiony zestaw">🤍</button><button class="ib tx" id="sEdit" aria-label="Edytuj zestaw">Edytuj</button><button class="ib tx" id="sDel" aria-label="Usuń zestaw">Usuń</button></div>
+  <ul id="list"></ul>
+  <button class="btn sec" id="add">+ Dodaj ćwiczenie</button></div><div class="empty" id="nofav" hidden>Nie masz jeszcze ulubionych zestawów<br>Dotknij serduszka przy zestawie.</div>
+  </div>
+  <div class="pg" id="pg-p" hidden>
   <section class="card hero">
     <div class="mas" id="mas"></div>
     <div class="i">
@@ -119,15 +145,11 @@ body{font-weight:500}h1{font-size:28px}
     </div>
   </section>
   <section class="card" style="padding:12px 14px"><div class="sh" style="margin:0 0 4px"><div class="t"><b>Ten tydzień</b></div><button class="ib tx" id="calBtn">Kalendarz</button></div><div class="week" id="week"></div></section>
-
-  <div class="seg"><button data-t="all">Wszystkie zestawy</button><button data-t="fav">Ulubione</button></div><div class="chips" id="chips"></div>
-  <div id="setbox"><div class="sh"><div class="t"><h2 id="sn"></h2><small id="tot"></small></div><button class="ib" id="sFav" aria-label="Ulubiony zestaw">🤍</button><button class="ib tx" id="sEdit" aria-label="Edytuj zestaw">Edytuj</button><button class="ib tx" id="sDel" aria-label="Usuń zestaw">Usuń</button></div>
-  <ul id="list"></ul>
-  <button class="btn sec" id="add">+ Dodaj ćwiczenie</button></div><div class="empty" id="nofav" hidden>Nie masz jeszcze ulubionych zestawów<br>Dotknij serduszka przy zestawie.</div>
-
-  <section class="card" style="margin-top:18px">
+  <section class="card">
     <h2>Odznaki</h2><div class="badges" id="badges"></div>
   </section>
+  </div>
+  <div class="pg" id="pg-s" hidden>
   <section class="card">
     <h2>Ustawienia</h2>
     <label class="r">Czas na przygotowanie (s)<input type="number" id="cPrep" min="0" max="60" inputmode="numeric"></label>
@@ -135,8 +157,10 @@ body{font-weight:500}h1{font-size:28px}
     <label class="r">Wibracje<input type="checkbox" id="cVib"></label>
     <div class="row"><button class="btn sec" id="reset">Przywróć zestawy startowe</button></div>
   </section>
+  </div>
 </main>
-<div class="fix"><button class="btn" id="start">▶ Start</button></div>
+<nav id="nav"><button data-pg="t" class="on"><span>🧘</span>Trening</button><button data-pg="p"><span>📈</span>Postęp</button><button data-pg="s"><span>⚙️</span>Ustawienia</button></nav>
+<div class="fix" id="fixb"><button class="btn" id="start">▶ Start</button></div>
 
 <div id="play" hidden>
   <div><div id="pe"></div><div id="pn"></div><div id="ps"></div></div>
@@ -144,6 +168,7 @@ body{font-weight:500}h1{font-size:28px}
   <div id="pnx"></div>
   <div class="ctl"><button id="prev" aria-label="Poprzednie">⏮</button><button id="pp" aria-label="Pauza">⏸</button><button id="next" aria-label="Następne">⏭</button></div>
   <button class="x" id="stop">Zakończ</button>
+  <button class="btn" id="home" hidden>Wróć do strony głównej</button>
 </div>
 
 <dialog id="dlg">
@@ -154,7 +179,7 @@ body{font-weight:500}h1{font-size:28px}
   <label class="r">Dwie strony (lewa / prawa)<input type="checkbox" id="eSides"></label>
   <div class="row"><button class="btn sec" id="eCancel">Anuluj</button><button class="btn" id="eSave">Zapisz</button></div>
 </dialog>
-<dialog id="cdlg"><div class="cal-h"><button class="ib" id="cPrev" aria-label="Poprzedni miesiąc">‹</button><h2 id="cTitle"></h2><button class="ib" id="cNext" aria-label="Następny miesiąc">›</button></div><div class="cal" id="cal"></div><p class="cs" id="cSum"></p><p class="cs" style="margin-top:4px">Kolorowe dni: rozciągałaś się. Szare: przerwa.</p><div class="row"><button class="btn" id="cClose">Zamknij</button></div></dialog>
+<dialog id="cdlg"><div class="cal-h"><button class="ib" id="cPrev" aria-label="Poprzedni miesiąc">‹</button><h2 id="cTitle"></h2><button class="ib" id="cNext" aria-label="Następny miesiąc">›</button></div><div class="cal" id="cal"></div><p class="cs" id="cSum"></p><p class="cs" style="margin-top:4px">Dotknij dnia, żeby dodać lub usunąć rozciąganie – także wstecz.</p><div class="row"><button class="btn" id="cClose">Zamknij</button></div></dialog>
 <dialog id="sdlg">
   <h2 id="sdt">Zestaw</h2>
   <div class="r"><input type="text" id="sName" placeholder="Nazwa zestawu" maxlength="40"></div>
@@ -186,12 +211,29 @@ let tab='all';
 /* H S P E1 W1 E2 W2 K1 F1 K2 F2 */
 const POSES={stand:[50,22,50,35,50,57,44,47,43,58,56,47,57,58,47,72,47,87,53,72,53,87],up:[50,24,50,37,50,58,45,24,47,10,55,24,53,10,47,73,47,87,53,73,53,87],fold:[40,74,48,62,60,48,48,76,46,87,52,76,52,87,60,68,60,87,64,68,64,87],child:[36,80,46,76,72,78,38,84,26,86,40,86,30,86,58,85,80,86,62,85,82,86],cat:[24,56,34,58,66,58,33,73,32,86,36,73,36,86,66,84,82,86,70,84,84,86],lunge:[54,26,54,40,54,60,56,28,56,12,52,28,52,12,38,66,36,86,66,78,82,86],lunge2:[42,34,46,46,56,62,40,60,38,82,44,60,42,84,40,66,40,86,70,82,86,86],fly:[50,44,50,56,50,78,40,70,46,84,60,70,54,84,30,82,46,86,70,82,54,86],bend:[40,26,48,38,54,58,54,24,42,12,56,50,58,60,50,73,46,87,58,73,62,87],chest:[50,24,50,38,50,60,36,32,44,20,64,32,56,20,47,74,45,87,53,74,55,87],arms:[50,24,50,38,50,60,34,38,18,38,66,38,82,38,47,74,45,87,53,74,55,87],hug:[50,24,50,38,50,60,58,42,42,40,44,46,56,40,47,74,47,87,53,74,53,87],knee:[24,76,34,78,66,78,40,68,48,66,40,68,50,64,50,66,56,74,78,80,90,80],twist:[24,78,34,78,60,78,34,68,26,60,36,70,26,72,64,62,76,76,60,68,72,82],quad:[50,22,50,35,50,57,58,48,64,62,42,44,38,34,50,72,50,87,52,74,64,62],neck:[43,28,50,38,50,60,36,32,42,20,56,48,58,60,47,74,47,87,53,74,53,87],hinge:[24,52,34,54,60,56,26,54,14,54,28,54,16,54,60,72,60,87,64,72,64,87],sit:[50,28,50,42,50,64,56,54,66,60,58,56,68,62,70,64,70,86,74,64,74,86],cobra:[34,50,40,62,66,78,39,74,38,86,42,74,42,86,78,82,92,84,80,82,94,84],wide:[50,78,50,66,50,52,44,78,44,87,56,78,56,87,34,70,22,87,66,70,78,87],reach:[50,22,50,35,50,57,62,36,76,34,62,38,76,38,47,72,47,87,53,72,53,87],tri:[50,24,50,36,50,58,56,18,46,32,62,30,56,20,47,73,47,87,53,73,53,87],legsup:[16,78,26,80,50,80,36,80,44,80,38,80,46,80,50,62,50,44,53,62,53,44],lie:[20,78,30,80,56,80,40,80,50,80,42,80,52,80,70,80,84,80,72,80,86,80]};
 const PL={stand:'Stanie',up:'Ręce w górę',fold:'Skłon w przód',child:'Pozycja dziecka',cat:'Na czworakach',lunge:'Wykrok',lunge2:'Wykrok w tył',fly:'Motyl',bend:'Skłon w bok',chest:'Klatka piersiowa',arms:'Ręce na boki',hug:'Objęcie ramienia',knee:'Kolano do klatki',twist:'Skręt leżąc',quad:'Czworogłowy',neck:'Szyja',hinge:'Nurek',sit:'Siad',cobra:'Pies z głową w górę',wide:'Szeroki skłon',reach:'Ręce do przodu',tri:'Triceps',legsup:'Nogi w górze',lie:'Leżenie'};
-const fig=p=>{const d=POSES[p]||POSES.stand,P=i=>d[2*i]+' '+d[2*i+1],Ln=(a,b,c,col,w)=>`<path d="M${P(a)} L${P(b)} L${P(c)}" stroke="${col}" stroke-width="${w}" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`,hd=i=>`<circle cx="${d[2*i]}" cy="${d[2*i+1]}" r="3.8" fill="#ffd9c2"/>`,h=d[0],y=d[1];
- return `<svg viewBox="4 2 92 96"><rect x="12" y="88" width="76" height="6" rx="3" fill="#fff" opacity=".8"/>${Ln(2,9,10,'#b8b0f5',9)}${Ln(1,5,6,'#c9c3f8',8)}${hd(6)}${Ln(1,2,2,'#ff9bbb',15)}${Ln(2,7,8,'#6f5cf0',9)}${Ln(1,3,4,'#8576f3',8)}${hd(4)}${Ln(1,0,0,'#ffd9c2',6)}<circle cx="${h}" cy="${y-9}" r="4.5" fill="#3b3358"/><circle cx="${h}" cy="${y}" r="9.5" fill="#ffe3d0"/><circle cx="${h-3.4}" cy="${y}" r="1.4" fill="#4a3550"/><circle cx="${h+3.4}" cy="${y}" r="1.4" fill="#4a3550"/><circle cx="${h-5.8}" cy="${y+3}" r="1.8" fill="#ff8fb8" opacity=".7"/><circle cx="${h+5.8}" cy="${y+3}" r="1.8" fill="#ff8fb8" opacity=".7"/></svg>`};
-$('#eEm').innerHTML=Object.keys(PL).map(k=>`<option value="${k}">${PL[k]}</option>`).join('');$('#eEm').onchange=()=>$('#ePrev').innerHTML=fig($('#eEm').value);
+const colFor=p=>COL[[...p].reduce((a,c)=>a+c.charCodeAt(0),0)%6];
+const SKIN='#f4bda3',SKIN2='#e3a68a',TOP='#ff8fb1',LEG='#6f5cf0',LEG2='#9a8bff';
+const fig=(p,col,q)=>{const S=POSES[p]||POSES.stand,d=S.slice();
+ if(q!=null){const k=.09*Math.sin(q*2),ex=(a,b)=>{d[2*a]=S[2*b]+(S[2*a]-S[2*b])*(1+k);d[2*a+1]=S[2*b+1]+(S[2*a+1]-S[2*b+1])*(1+k)};ex(4,3);ex(6,5);ex(8,7);ex(10,9);d[1]+=1.1*Math.sin(q*2+1);d[0]+=.5*Math.sin(q*1.3)}
+ const X=i=>d[2*i],Y=i=>d[2*i+1],P=i=>X(i)+' '+Y(i),
+ sg=(a,b,k,w)=>`<path d="M${P(a)}L${P(b)}" stroke="${k}" stroke-width="${w}" stroke-linecap="round" fill="none"/>`,
+ lm=(a,b,c,k,w1,w2)=>`<path d="M${P(a)}L${P(b)}L${P(c)}" stroke="#2a2540" stroke-opacity=".22" stroke-width="${Math.max(w1,w2)+1.8}" stroke-linecap="round" stroke-linejoin="round" fill="none"/>`+sg(a,b,k,w1)+sg(b,c,k,w2),
+ dot=(i,r,k)=>`<circle cx="${X(i)}" cy="${Y(i)}" r="${r}" fill="${k}"/>`,
+ foot=(i,j)=>{const cx=X(i)-X(j),cy=Y(i)-Y(j),l=Math.hypot(cx,cy)||1;let px=-cy/l,py=cx/l;if(px<0||(Math.abs(px)<.5&&py<0)){px=-px;py=-py}
+  const e=`M${P(i)}L${X(i)+px*5.5} ${Y(i)+py*5.5}`;return `<path d="${e}" stroke="#2a2540" stroke-opacity=".22" stroke-width="6.4" stroke-linecap="round"/><path d="${e}" stroke="#fff" stroke-width="4.6" stroke-linecap="round"/>`},
+ dx=X(2)-X(1),dy=Y(2)-Y(1),n=Math.hypot(dx,dy)||1,ux=dx/n,uy=dy/n,nx=-uy,ny=ux,mx=(X(1)+X(2))/2,my=(Y(1)+Y(2))/2,
+ pt=(x,y,w)=>`${x+nx*w} ${y+ny*w}`,
+ tor=`M${pt(X(1),Y(1),7.2)}L${pt(mx,my,5.6)}L${pt(X(2),Y(2),7.4)}L${pt(X(2),Y(2),-7.4)}L${pt(mx,my,-5.6)}L${pt(X(1),Y(1),-7.2)}Z`,
+ tl=`<path d="M${P(2)}Q${X(2)+ux*10+nx*9} ${Y(2)+uy*10+ny*9} ${X(2)+ux*17+nx*3} ${Y(2)+uy*17+ny*3}" stroke="${FUR}" stroke-width="4.5" stroke-linecap="round" fill="none"/>`,
+ bow=`<g transform="translate(${X(0)+8} ${Y(0)-10})"><path d="M0 0L-6 -4V4ZM0 0L6 -4V4Z" fill="#ff5e9c"/><circle r="1.9" fill="#ffb3d1"/></g>`;
+ return `<svg viewBox="4 2 92 96"><rect x="-50" y="-50" width="250" height="250" fill="${col||'#e6e1ff'}"/><rect x="10" y="88" width="80" height="7" rx="3.5" fill="#2a2540" opacity=".16"/>${tl}${lm(2,9,10,LEG2,9,7.5)}${lm(1,5,6,SKIN2,5.2,4.6)}${dot(6,2.7,SKIN2)}<path d="${tor}" fill="#2a2540" fill-opacity=".22" stroke="#2a2540" stroke-opacity=".22" stroke-width="5" stroke-linejoin="round"/><path d="${tor}" fill="${TOP}" stroke="${TOP}" stroke-width="3" stroke-linejoin="round"/>${lm(2,7,8,LEG,10,8)}${lm(1,3,4,SKIN,5.4,4.8)}${dot(4,2.8,SKIN)}${sg(0,1,SKIN,4.5)}${head(X(0),Y(0),.52)}${bow}</svg>`};
+let raf=0;const stopAnim=()=>cancelAnimationFrame(raf);
+function anim(el,p){stopAnim();const c=colFor(p),t0=performance.now(),still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+ const f=now=>{const q=(now-t0)/1000,r=Math.min(1,q/1.4),e=r*r*(3-2*r);el.innerHTML=fig(p,c,still?null:q);if(!still)raf=requestAnimationFrame(f)};f(t0)}
+$('#eEm').innerHTML=Object.keys(PL).map(k=>`<option value="${k}">${PL[k]}</option>`).join('');$('#eEm').onchange=()=>anim($('#ePrev'),$('#eEm').value);$('#dlg').addEventListener('close',stopAnim);
 const BG=[['🌟','Pierwszy raz',()=>db.st.n>=1],['🔥','3 dni z rzędu',()=>db.st.best>=3],['🏆','Cały tydzień',()=>db.st.best>=7],['🎀','10 sesji',()=>db.st.n>=10],['⏱️','Godzina rozciągania',()=>db.st.secs>=3600],['💎','Poziom 4',()=>lvl()>=4]];
 const earned=()=>BG.filter(b=>b[2]()).map(b=>b[1]);
-const COL=['#e6e1ff','#ffe1ea','#d9f3ea','#ffe9d6','#dcebff','#f3e8ff'];
+const COL=['#c9dde6','#f3e7c9','#ffcab3','#bfe3d6','#f0b9c4','#c9c6ee'];
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
 function render(){
@@ -208,7 +250,7 @@ function render(){
   const c=cur(),ul=$('#list');ul.innerHTML='';let tot=0,n=0;
   c.items.forEach((e,i)=>{tot+=e.secs*(e.sides?2:1)+db.cfg.prep;
     const li=document.createElement('li');
-    li.innerHTML=`<div class="em" style="background:${COL[i%6]}">${fig(e.p)}</div><div class="t"><b>${esc(e.name)}</b><small>${e.sides?e.secs+' s × 2 strony':e.secs+' s'}</small></div>`;
+    li.innerHTML=`<div class="em" style="background:${COL[i%6]}">${fig(e.p,colFor(e.p))}</div><div class="t"><b>${esc(e.name)}</b><small>${e.sides?e.secs+' s × 2 strony':e.secs+' s'}</small></div>`;
     [['↑',()=>mv(i,-1)],['↓',()=>mv(i,1)],['✎',()=>edit(i)],['✕',()=>{if(confirm('Usunąć „'+e.name+'”?')){c.items.splice(i,1);save();render()}}]].forEach(([t,f])=>{const b=document.createElement('button');b.className='ib';b.textContent=t;b.onclick=f;li.appendChild(b)});
     ul.appendChild(li)});
   if(!c.items.length)ul.innerHTML='<div class="empty">Ten zestaw jest pusty<br>Dodaj pierwsze ćwiczenie.</div>';
@@ -221,7 +263,7 @@ function mv(i,d){const a=cur().items,j=i+d;if(j<0||j>=a.length)return;[a[i],a[j]
 let eIdx=-1;
 function edit(i){eIdx=i;const e=i>=0?cur().items[i]:{name:'',p:'stand',secs:30,sides:false};
   $('#dt').textContent=i>=0?'Edytuj ćwiczenie':'Nowe ćwiczenie';
-  $('#eName').value=e.name;$('#eEm').value=e.p||'stand';$('#ePrev').innerHTML=fig($('#eEm').value);$('#eSecs').value=e.secs;$('#eSides').checked=e.sides;$('#dlg').showModal()}
+  $('#eName').value=e.name;$('#eEm').value=e.p||'stand';anim($('#ePrev'),$('#eEm').value);$('#eSecs').value=e.secs;$('#eSides').checked=e.sides;$('#dlg').showModal()}
 $('#add').onclick=()=>edit(-1);
 $('#eCancel').onclick=()=>$('#dlg').close();
 $('#eSave').onclick=()=>{const name=$('#eName').value.trim();if(!name){$('#eName').focus();return}
@@ -263,8 +305,12 @@ const cat=L=>{const k=Math.min(L-1,4);let g='';
 /* kalendarz */
 let cm=new Date();cm.setDate(1);
 function cal(){const y=cm.getFullYear(),m=cm.getMonth(),tk=key(new Date()),set=new Set(db.st.days),first=(new Date(y,m,1).getDay()+6)%7,nd=new Date(y,m+1,0).getDate();let n=0,h='Pn Wt Śr Cz Pt Sb Nd'.split(' ').map(x=>`<div class="h">${x}</div>`).join('')+'<span></span>'.repeat(first);
- for(let d=1;d<=nd;d++){const k=key(new Date(y,m,d)),on=set.has(k);if(on)n++;h+=`<i class="${on?'on':k<tk?'miss':k===tk?'':'fu'}${k===tk?' td':''}">${d}</i>`}
+ for(let d=1;d<=nd;d++){const k=key(new Date(y,m,d)),on=set.has(k);if(on)n++;h+=`<i data-k="${k}" class="${on?'on':k<tk?'miss':k===tk?'':'fu'}${k===tk?' td':''}">${d}</i>`}
  $('#cal').innerHTML=h;$('#cTitle').textContent=cm.toLocaleDateString('pl-PL',{month:'long',year:'numeric'});$('#cSum').textContent=`${n} dni z rozciąganiem w tym miesiącu · najdłuższa seria: ${db.st.best}`}
+const bestStreak=()=>{const a=[...new Set(db.st.days)].sort();let b=0,n=0,pv=null;a.forEach(k=>{const d=new Date(k+'T12:00:00');n=pv&&Math.round((d-pv)/864e5)===1?n+1:1;pv=d;b=Math.max(b,n)});return b};
+$('#cal').onclick=e=>{const i=e.target.closest('i');if(!i||!i.dataset.k||i.classList.contains('fu'))return;const k=i.dataset.k,st=db.st,x=st.days.indexOf(k);
+ if(x>=0){st.days.splice(x,1);st.n=Math.max(0,st.n-1)}else{st.days.push(k);st.n++}
+ st.days.sort();st.best=bestStreak();save();cal();render()};
 $('#calBtn').onclick=()=>{cm=new Date();cm.setDate(1);cal();$('#cdlg').showModal()};
 $('#cPrev').onclick=()=>{cm.setMonth(cm.getMonth()-1);cal()};$('#cNext').onclick=()=>{cm.setMonth(cm.getMonth()+1);cal()};$('#cClose').onclick=()=>$('#cdlg').close();
 /* dźwięk */
@@ -290,29 +336,33 @@ document.addEventListener('visibilitychange',()=>{if(!$('#play').hidden&&documen
 function go(k){if(k<0)k=0;if(k>=steps.length)return finish();
   i=k;const s=steps[i];left=s.d*1000;endAt=Date.now()+left;lastSec=null;paused=false;
   if(s.t==='switch')sSwitch();else if(s.t==='ex')sStart();
-  $('#play').className=s.t;$('#pe').innerHTML=fig(s.em);$('#pn').textContent=s.name;$('#ps').textContent=s.sub;
+  $('#play').className=s.t;anim($('#pe'),s.em);$('#pn').textContent=s.name;$('#ps').textContent=s.sub;
   const nx=steps[i+1];$('#pnx').textContent=nx?'Dalej: '+nx.name+(nx.t==='prep'?'':nx.sub?' – '+nx.sub:''):'To już ostatni krok';
   $('#pp').innerHTML=IC.pause;draw()}
 function draw(){const s=steps[i];$('#pt').textContent=Math.max(0,Math.ceil(left/1000));$('#ring').style.strokeDashoffset=553*(1-left/(s.d*1000))}
 function tick(){if(paused)return;left=endAt-Date.now();const sec=Math.ceil(left/1000);
-  if(sec!==lastSec){lastSec=sec;if(sec<=3&&sec>0&&steps[i].d>3)sTick()}
+  if(sec!==lastSec){lastSec=sec;if(sec<=5&&sec>0&&steps[i].d>5)sTick()}
   if(left<=0)return go(i+1);draw()}
 function begin(){if(tab==='fav'&&!db.sets.some(x=>x.fav))return;if(!cur().items.length){edit(-1);return}
-  build();$('#play').hidden=false;lock();beep(1,.01);go(0);clearInterval(timer);timer=setInterval(tick,150)}
+  build();$('.ctl').hidden=false;$('#stop').hidden=false;$('#home').hidden=true;$('#play').hidden=false;lock();beep(1,.01);go(0);clearInterval(timer);timer=setInterval(tick,150)}
 function finish(){clearInterval(timer);i=steps.length;
   const before=earned(),work=steps.filter(s=>s.t!=='prep').reduce((a,s)=>a+s.d,0),gain=10+Math.round(work/6),oldL=lvl(),st=db.st,today=key(new Date());
-  st.xp+=gain;st.n++;st.secs+=work;if(!st.days.includes(today))st.days.push(today);st.days=st.days.slice(-400);st.best=Math.max(st.best,streak());save();
+  st.xp+=gain;st.n++;st.secs+=work;if(!st.days.includes(today))st.days.push(today);st.days=st.days.slice(-3000);st.best=Math.max(st.best,streak());save();
   const nw=earned().filter(b=>!before.includes(b)),L=lvl();
-  sDone();confetti();$('#play').className='ex';$('#pe').innerHTML=cat(L);
+  sDone();confetti();$('#play').className='ex';stopAnim();$('#pe').innerHTML=cat(L);
   $('#pn').textContent='Gotowe 🎉';$('#ps').textContent=`✨ +${gain} XP · 🔥 ${streak()} dni`;
   $('#pt').textContent='✓';$('#ring').style.strokeDashoffset=0;
   $('#pnx').textContent=(L>oldL?`Nowy poziom: ${L}. `:'')+(nw.length?'Nowa odznaka: '+nw.join(', '):'');
-  $('#pp').innerHTML=IC.pause;render()}
-function quit(){clearInterval(timer);$('#play').hidden=true;try{wl&&wl.release()}catch(e){}}
-$('#start').onclick=begin;$('#stop').onclick=quit;
+  $('.ctl').hidden=true;$('#stop').hidden=true;$('#home').hidden=false;render()}
+function quit(){stopAnim();clearInterval(timer);$('#play').hidden=true;try{wl&&wl.release()}catch(e){}}
+$('#start').onclick=begin;$('#stop').onclick=quit;$('#home').onclick=quit;
 $('#next').onclick=()=>{if(i<steps.length)go(i+1)};
 $('#prev').onclick=()=>{if(i<steps.length)go(i-1)};
 $('#pp').onclick=()=>{if(i>=steps.length)return;paused=!paused;paused?left=endAt-Date.now():endAt=Date.now()+left;$('#pp').innerHTML=paused?IC.play:IC.pause};
+const PG=['t','p','s'];function pg(k){PG.forEach(x=>{$('#pg-'+x).hidden=x!==k});document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.pg===k));$('#fixb').hidden=k!=='t';scrollTo(0,0)}
+document.querySelectorAll('#nav button').forEach(b=>b.onclick=()=>pg(b.dataset.pg));pg('t');
+['gesturestart','gesturechange','gestureend'].forEach(n=>document.addEventListener(n,e=>e.preventDefault()));
+document.addEventListener('touchmove',e=>{if(e.touches.length>1)e.preventDefault()},{passive:false});
 render();
 if('serviceWorker'in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 </script>
